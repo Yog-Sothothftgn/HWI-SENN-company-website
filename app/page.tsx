@@ -9,19 +9,19 @@ const products = [
   {
     title: "Fish Oil",
     desc: "Custom EPA/DHA specs, deodorized, bulk packaging available.",
-    img: "/logo.png",
+    img: "/oil1.jpg",
     sectionId: "section-3",
   },
   {
     title: "Omega-3 Powder",
     desc: "Plant-based DHA/EPA solutions for EU/NA supplement brands.",
-    img: "/logo.png",
+    img: "/Powder.jpg",
     sectionId: "section-4",
   },
   {
-    title: "capsules",
+    title: "Capsules",
     desc: "Customized processing for deep-sea derived ingredients and intermediates.",
-    img: "/logo.png",
+    img: "/capsule.jpg",
     sectionId: "section-5",
   },
 ];
@@ -51,8 +51,57 @@ export default function Home() {
         <div className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory justify-between scroll-smooth">
 
           {/* Section 1 — Hero */}
-          <section className="relative h-screen snap-start flex items-center justify-center bg-[#E2E2E2]/80 text-[#66ccff]">
-            <div className="w-full max-w-4xl items-center px-6 mx-auto">
+          <section id="section-hero" className="relative h-screen snap-start flex items-center justify-center bg-[#E2E2E2]/80 text-[#66ccff]">
+
+            {/* Warm sunlight wash — top-left background tint */}
+            <div className="absolute inset-0 z-[1] pointer-events-none" style={{background:"radial-gradient(ellipse 70% 60% at 0% 0%, hsl(48,80%,92%) 0%, transparent 70%)"}}/>
+
+            {/* Sunlight rays — top-left, same layer as fish (z-2) */}
+            <div className="absolute top-0 left-0 z-[2] pointer-events-none select-none" style={{width:900, height:800}}>
+              <style>{`
+                @keyframes ray-p1{0%,100%{opacity:0.22}50%{opacity:0.38}}
+                @keyframes ray-p2{0%,100%{opacity:0.16}50%{opacity:0.30}}
+                @keyframes ray-p3{0%,100%{opacity:0.28}50%{opacity:0.44}}
+                @keyframes ray-p4{0%,100%{opacity:0.18}50%{opacity:0.32}}
+                @keyframes ray-p5{0%,100%{opacity:0.12}50%{opacity:0.24}}
+              `}</style>
+              <svg width="900" height="800" viewBox="0 0 900 800" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="ray-blur">
+                    <feGaussianBlur stdDeviation="28"/>
+                  </filter>
+                  <linearGradient id="sg1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="860" y2="308">
+                    <stop offset="0%" stopColor="hsl(195,55%,85%)" stopOpacity="0.55"/>
+                    <stop offset="100%" stopColor="hsl(195,55%,85%)" stopOpacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="sg2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="736" y2="516">
+                    <stop offset="0%" stopColor="hsl(195,55%,85%)" stopOpacity="0.45"/>
+                    <stop offset="100%" stopColor="hsl(195,55%,85%)" stopOpacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="sg3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="578" y2="688">
+                    <stop offset="0%" stopColor="hsl(195,55%,85%)" stopOpacity="0.5"/>
+                    <stop offset="100%" stopColor="hsl(195,55%,85%)" stopOpacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="sg4" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="380" y2="800">
+                    <stop offset="0%" stopColor="hsl(195,55%,85%)" stopOpacity="0.4"/>
+                    <stop offset="100%" stopColor="hsl(195,55%,85%)" stopOpacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="sg5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="800" y2="420">
+                    <stop offset="0%" stopColor="hsl(195,55%,85%)" stopOpacity="0.35"/>
+                    <stop offset="100%" stopColor="hsl(195,55%,85%)" stopOpacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g filter="url(#ray-blur)">
+                  <polygon points="0,0 900,220 820,420" fill="url(#sg1)" style={{animation:"ray-p1 8s ease-in-out infinite"}}/>
+                  <polygon points="0,0 780,480 680,620" fill="url(#sg2)" style={{animation:"ray-p2 11s 1.8s ease-in-out infinite"}}/>
+                  <polygon points="0,0 600,680 500,760" fill="url(#sg3)" style={{animation:"ray-p3 9s 0.9s ease-in-out infinite"}}/>
+                  <polygon points="0,0 380,800 260,800" fill="url(#sg4)" style={{animation:"ray-p4 13s 3s ease-in-out infinite"}}/>
+                  <polygon points="0,0 860,330 720,540" fill="url(#sg5)" style={{animation:"ray-p5 14s 1.2s ease-in-out infinite"}}/>
+                </g>
+              </svg>
+            </div>
+
+            <div className="relative z-10 w-full max-w-4xl items-center px-6 mx-auto">
               <Image
                 src="/logo_transparent.png"
                 alt="HWI SENN"
@@ -64,7 +113,7 @@ export default function Home() {
             </div>
 
             {/* LA Warehouse Badge */}
-            <div className="absolute bottom-8 right-8 flex items-center gap-4 rounded-full border border-zinc-300 bg-white/70 px-8 py-4 shadow-sm backdrop-blur-sm">
+            <div className="absolute bottom-8 right-8 z-10 flex items-center gap-4 rounded-full border border-zinc-300 bg-white/70 px-8 py-4 shadow-sm backdrop-blur-sm">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 shrink-0 text-zinc-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
                 <circle cx="12" cy="10" r="3"/>
@@ -74,7 +123,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left -mt-24">
+            <div className="relative z-10 flex flex-col items-center gap-6 text-center sm:items-start sm:text-left -mt-24">
               <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
                 Omega-3 Fatty Acids: Essential Nutrients for Brain and Heart Health
               </h1>
@@ -104,7 +153,7 @@ export default function Home() {
           </section>
 
           {/* Section 2 — Products */}
-          <section className="h-screen snap-start flex items-center justify-center bg-[#DEDFE0]/80 text-zinc-600">
+          <section id="section-products" className="h-screen snap-start flex items-center justify-center bg-[#DEDFE0]/80 text-zinc-600">
             <div className="relative z-10 w-full max-w-7xl items-center px-6 mx-auto">
               <h2 className="text-4xl text-center font-semibold">Products</h2>
               <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -116,15 +165,18 @@ export default function Home() {
                   >
                     <Tiltcard>
                       <div className="bg-white rounded-lg shadow-md transition-shadow group-hover:shadow-lg">
-                        <Image
-                          src={product.img}
-                          alt={product.title}
-                          width={500}
-                          height={500}
-                          className="mt-4 w-full h-auto"
-                        />
-                        <h3 className="text-2xl font-semibold">{product.title}</h3>
-                        <p className="mt-2 text-xl text-gray-700">{product.desc}</p>
+                        <div className="relative w-full h-96 overflow-hidden rounded-t-lg">
+                          <Image
+                            src={product.img}
+                            alt={product.title}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <h3 className="text-2xl font-semibold">{product.title}</h3>
+                          <p className="mt-2 text-base text-gray-600">{product.desc}</p>
+                        </div>
                       </div>
                     </Tiltcard>
                   </button>
@@ -157,7 +209,7 @@ export default function Home() {
               </div>
 
               {/* Right: spec table */}
-              <div className="flex-1">
+              <div className="flex-1 relative">
                 <table className="w-full border-collapse rounded-xl overflow-hidden shadow-md text-lg">
                   <thead>
                     <tr className="bg-zinc-700 text-white">
@@ -252,14 +304,63 @@ export default function Home() {
                 </p>
               </div>
               {/* Right: placeholder */}
-              <div className="flex-1 flex items-center justify-center h-72 lg:h-96 rounded-xl bg-zinc-200">
-                <Image src="/logo.png" alt="Omega-3 Powder" width={300} height={300} className="object-contain opacity-40" />
+              <div className="flex-1 h-72 lg:h-96 rounded-xl overflow-hidden">
+                <Image src="/Powder.jpg" alt="Omega-3 Powder" width={600} height={600} className="w-full h-full object-cover" />
               </div>
             </div>
           </section>
 
           {/* Section 5 — Capsules */}
-          <section id="section-5" className="h-screen snap-start flex items-center justify-center bg-[#E8E8E6]/80 text-zinc-700 overflow-hidden">
+          <section id="section-5" className="relative h-screen snap-start flex items-center justify-center bg-[#DEDFE0]/80 text-zinc-700 overflow-hidden">
+
+            {/* Seaweed decoration — bottom-left, same layer as fish (z-2) */}
+            <div className="absolute bottom-0 left-0 z-[2] pointer-events-none select-none" style={{ width: 300, height: 220, opacity: 0.13 }}>
+              <style>{`
+                @keyframes sway-a { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(3deg)} }
+                @keyframes sway-b { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-2.5deg)} }
+                @keyframes sway-c { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(2deg)} }
+                @keyframes sway-d { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-3deg)} }
+                @keyframes sway-e { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(2.5deg)} }
+                @keyframes sway-f { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-2deg)} }
+              `}</style>
+              <svg width="300" height="220" viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Strand A */}
+                <g style={{transformOrigin:"45px 220px", animation:"sway-a 4.8s ease-in-out infinite"}}>
+                  <path d="M45,220 C28,180 62,148 38,110 C20,80 48,52 40,20" stroke="hsl(205,38%,18%)" strokeWidth="14" strokeLinecap="round"/>
+                  <ellipse cx="26" cy="148" rx="22" ry="9" transform="rotate(-36,26,148)" fill="hsl(205,38%,18%)"/>
+                  <ellipse cx="55" cy="88" rx="20" ry="8" transform="rotate(40,55,88)" fill="hsl(205,38%,18%)"/>
+                </g>
+                {/* Strand B */}
+                <g style={{transformOrigin:"110px 220px", animation:"sway-b 5.5s 0.6s ease-in-out infinite"}}>
+                  <path d="M110,220 C128,185 94,158 116,125 C132,98 108,68 118,38" stroke="hsl(200,36%,20%)" strokeWidth="13" strokeLinecap="round"/>
+                  <ellipse cx="126" cy="168" rx="21" ry="8" transform="rotate(38,126,168)" fill="hsl(200,36%,20%)"/>
+                  <ellipse cx="100" cy="108" rx="19" ry="7" transform="rotate(-40,100,108)" fill="hsl(200,36%,20%)"/>
+                </g>
+                {/* Strand C — shorter */}
+                <g style={{transformOrigin:"175px 220px", animation:"sway-c 4.2s 1.1s ease-in-out infinite"}}>
+                  <path d="M175,220 C158,190 190,168 170,140 C155,118 172,95 165,68" stroke="hsl(210,35%,18%)" strokeWidth="12" strokeLinecap="round"/>
+                  <ellipse cx="160" cy="175" rx="18" ry="7" transform="rotate(-38,160,175)" fill="hsl(210,35%,18%)"/>
+                  <ellipse cx="180" cy="118" rx="17" ry="6" transform="rotate(36,180,118)" fill="hsl(210,35%,18%)"/>
+                </g>
+                {/* Strand D — left foreground, shortest */}
+                <g style={{transformOrigin:"72px 220px", animation:"sway-d 6.0s 0.3s ease-in-out infinite"}}>
+                  <path d="M72,220 C58,196 82,178 65,155 C52,136 68,118 62,95" stroke="hsl(208,37%,19%)" strokeWidth="12" strokeLinecap="round"/>
+                  <ellipse cx="56" cy="185" rx="16" ry="6" transform="rotate(-34,56,185)" fill="hsl(208,37%,19%)"/>
+                </g>
+                {/* Strand E */}
+                <g style={{transformOrigin:"235px 220px", animation:"sway-e 5.1s 1.8s ease-in-out infinite"}}>
+                  <path d="M235,220 C252,196 225,175 242,152 C254,134 238,114 244,92" stroke="hsl(203,34%,18%)" strokeWidth="11" strokeLinecap="round"/>
+                  <ellipse cx="250" cy="178" rx="16" ry="6" transform="rotate(36,250,178)" fill="hsl(203,34%,18%)"/>
+                </g>
+                {/* Strand F — far left, tallest */}
+                <g style={{transformOrigin:"10px 220px", animation:"sway-f 4.6s 2.2s ease-in-out infinite"}}>
+                  <path d="M10,220 C-4,188 22,162 6,132 C-6,108 14,82 5,55 C-2,34 12,12 8,0" stroke="hsl(207,36%,19%)" strokeWidth="13" strokeLinecap="round"/>
+                  <ellipse cx="-2" cy="190" rx="17" ry="7" transform="rotate(-32,-2,190)" fill="hsl(207,36%,19%)"/>
+                  <ellipse cx="18" cy="128" rx="16" ry="6" transform="rotate(34,18,128)" fill="hsl(207,36%,19%)"/>
+                  <ellipse cx="2" cy="68" rx="14" ry="5" transform="rotate(-30,2,68)" fill="hsl(207,36%,19%)"/>
+                </g>
+              </svg>
+            </div>
             <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-10">
 
               {/* Left: intro */}
@@ -282,8 +383,11 @@ export default function Home() {
               </div>
 
               {/* Right: contact card */}
-              <div className="flex-1 flex flex-col items-center justify-center h-72 lg:h-96 rounded-2xl border-2 border-dashed border-zinc-300 bg-white/50 gap-5">
-                <p className="text-6xl">💊</p>
+              <div className="flex-1 flex flex-col items-center justify-center h-72 lg:h-96 rounded-2xl border-2 border-dashed border-zinc-300 bg-white/50 gap-5 overflow-hidden relative">
+                <div className="absolute inset-0 opacity-20">
+                  <Image src="/capsule.jpg" alt="Capsules" fill className="object-cover" />
+                </div>
+                <div className="relative z-10 flex flex-col items-center gap-5">
                 <p className="text-2xl font-extrabold text-zinc-800 tracking-tight">Contact for More</p>
                 <p className="text-base font-medium text-zinc-500 text-center max-w-xs leading-7">
                   Full product catalogue, certifications and custom formulation details available on request.
@@ -294,6 +398,7 @@ export default function Home() {
                 >
                   Get in Touch →
                 </button>
+                </div>
               </div>
 
             </div>

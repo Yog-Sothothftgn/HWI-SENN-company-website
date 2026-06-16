@@ -54,23 +54,23 @@ export default function ContactModal({ onClose }: { onClose: () => void }) {
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div className="flex gap-3">
-                <div className="flex-1 flex flex-col gap-1">
+                <div className="flex-1 min-w-0 flex flex-col gap-1">
                   <label className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Name *</label>
                   <input
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Your name"
-                    className="rounded-lg border border-zinc-200 px-4 py-2.5 text-sm text-zinc-800 placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                    className="w-full rounded-lg border border-zinc-200 px-4 py-2.5 text-sm text-zinc-800 placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-400"
                   />
                 </div>
-                <div className="flex-1 flex flex-col gap-1">
+                <div className="flex-1 min-w-0 flex flex-col gap-1">
                   <label className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Company</label>
                   <input
                     value={form.company}
                     onChange={(e) => setForm({ ...form, company: e.target.value })}
                     placeholder="Company name"
-                    className="rounded-lg border border-zinc-200 px-4 py-2.5 text-sm text-zinc-800 placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                    className="w-full rounded-lg border border-zinc-200 px-4 py-2.5 text-sm text-zinc-800 placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-400"
                   />
                 </div>
               </div>
