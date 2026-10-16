@@ -22,7 +22,7 @@ function createGroup(depthIdx: number): HTMLDivElement {
   group.style.cssText = `
     position: fixed;
     top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    width: 100%; height: 100vh;
     pointer-events: none;
     z-index: 2;
     overflow: visible;
@@ -102,21 +102,36 @@ export default function OceanEffects() {
     );
     if (!scrollEl) return () => { groups.forEach(g => g.remove()); };
 
+    const sections = Array.from(scrollEl.querySelectorAll<HTMLElement>(":scope > section"));
+
+    const layout = () => {
+      groups.forEach((g, i) => {
+        const h = sections[i]?.offsetHeight ?? scrollEl.clientHeight;
+        g.style.height = `${h}px`;
+        g.style.width = `${scrollEl.clientWidth}px`;
+        g.style.setProperty("--rise", `${-h * 1.06}px`);
+      });
+      updateY();
+    };
+
     const updateY = () => {
       const scroll = scrollEl.scrollTop;
       groups.forEach((g, i) => {
-        const y = i * window.innerHeight - scroll;
-        g.style.transform = `translateY(${y}px)`;
+        const top = sections[i]?.offsetTop ?? i * scrollEl.clientHeight;
+        g.style.transform = `translateY(${top - scroll}px)`;
       });
     };
 
-    updateY();
+    layout();
     scrollEl.addEventListener("scroll", updateY, { passive: true });
-    window.addEventListener("resize", updateY);
+    window.addEventListener("resize", layout);
+    const ro = new ResizeObserver(layout);
+    ro.observe(scrollEl);
 
     return () => {
       scrollEl.removeEventListener("scroll", updateY);
-      window.removeEventListener("resize", updateY);
+      window.removeEventListener("resize", layout);
+      ro.disconnect();
       groups.forEach(g => g.remove());
     };
   }, []);
@@ -136,7 +151,7 @@ export default function OceanEffects() {
           0%   { transform: translateY(0) scale(1);        opacity: 0;   }
           10%  { opacity: 1; }
           85%  { opacity: 0.5; }
-          100% { transform: translateY(-106vh) scale(1.3); opacity: 0;   }
+          100% { transform: translateY(var(--rise, -106vh)) scale(1.3); opacity: 0;   }
         }
       `}</style>
       <div ref={containerRef} aria-hidden="true" />

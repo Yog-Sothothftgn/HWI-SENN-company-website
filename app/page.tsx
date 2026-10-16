@@ -52,10 +52,10 @@ export default function Home() {
       </button>
 
       <main className="flex min-h-screen w-full flex-col items-center justify-between sm:items-start">
-        <div className="h-screen w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+        <div className="vh-full w-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
 
           {/* ── Section 1 — Hero ────────────────────────────────── */}
-          <section id="section-hero" className="relative h-screen snap-start flex items-center justify-center bg-[#E2E2E2]/80 text-[#66ccff] overflow-hidden">
+          <section id="section-hero" className="relative vh-full snap-start flex items-center justify-center bg-[#E2E2E2]/80 text-[#66ccff] overflow-hidden">
 
             {/* Warm sunlight wash */}
             <div className="absolute inset-0 z-[1] pointer-events-none"
@@ -174,7 +174,7 @@ export default function Home() {
           </section>
 
           {/* ── Section 2 — Products ────────────────────────────── */}
-          <section id="section-products" className="h-screen snap-start flex items-center justify-center bg-[#DEDFE0]/80 text-zinc-600">
+          <section id="section-products" className="vh-full snap-start flex items-center justify-center bg-[#DEDFE0]/80 text-zinc-600">
             <div className="relative z-10 w-full max-w-7xl px-4 lg:px-6 mx-auto">
               <h2 className="text-2xl lg:text-4xl text-center font-semibold mb-4 lg:mb-8">Products</h2>
               {/* Mobile: horizontal scroll · Desktop: 3-col grid */}
@@ -203,7 +203,7 @@ export default function Home() {
           </section>
 
           {/* ── Section 3 — Fish Oil ────────────────────────────── */}
-          <section id="section-3" className="h-screen snap-start flex items-center justify-center bg-[#E2E2E2]/80 text-zinc-700 overflow-hidden">
+          <section id="section-3" className="vh-full snap-start flex items-center justify-center bg-[#E2E2E2]/80 text-zinc-700 overflow-hidden">
             <div className="relative z-10 w-full max-w-7xl mx-auto px-4 lg:px-6 flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-10">
 
               {/* Left */}
@@ -274,7 +274,7 @@ export default function Home() {
           </section>
 
           {/* ── Section 4 — Omega-3 Powder ──────────────────────── */}
-          <section id="section-4" className="h-screen snap-start flex items-center justify-center bg-[#DEDFE0]/80 text-zinc-700 overflow-hidden">
+          <section id="section-4" className="vh-full snap-start flex items-center justify-center bg-[#DEDFE0]/80 text-zinc-700 overflow-hidden">
             <div className="relative z-10 w-full max-w-7xl mx-auto px-4 lg:px-6 flex flex-col lg:flex-row items-center gap-4 lg:gap-10">
               {/* Left */}
               <div className="flex-1 flex flex-col gap-2 lg:gap-4">
@@ -317,7 +317,7 @@ export default function Home() {
           </section>
 
           {/* ── Section 5 — Capsules ────────────────────────────── */}
-          <section id="section-5" className="relative h-screen snap-start flex items-center justify-center bg-[#DEDFE0]/80 text-zinc-700 overflow-hidden">
+          <section id="section-5" className="relative vh-full snap-start flex items-center justify-center bg-[#DEDFE0]/80 text-zinc-700 overflow-hidden">
 
             {/* Seaweed */}
             <div className="absolute bottom-0 left-0 z-[2] pointer-events-none select-none hidden sm:block" style={{width:300,height:220,opacity:0.13}}>
