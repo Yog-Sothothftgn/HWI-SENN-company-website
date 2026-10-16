@@ -8,19 +8,19 @@ import OceanEffects from "./components/OceanEffects";
 const products = [
   {
     title: "Fish Oil",
-    desc: "Bulk EPA/DHA ethyl ester (EE) 60–70% & 84%, TG & rTG form. USP/EP/GOED-compliant. Custom ratios, N₂-protected drum.",
+    desc: "Custom EPA/DHA specs, deodorized, bulk packaging available.",
     img: "/oil1.jpg",
     sectionId: "section-3",
   },
   {
     title: "Omega-3 Powder",
-    desc: "Microencapsulated fish oil & algae oil powder. DHA 10–20%, EPA/DHA blends, algae DHA CWS. 25 kg/bag, custom assay.",
+    desc: "Plant-based DHA/EPA solutions for EU/NA supplement brands.",
     img: "/Powder.jpg",
     sectionId: "section-4",
   },
   {
     title: "Capsules",
-    desc: "Omega-3 softgel capsules, deep-sea fish oil & algae oil. EE/TG/rTG forms. Custom concentration & size on request.",
+    desc: "Customized processing for deep-sea derived ingredients and intermediates.",
     img: "/capsule.jpg",
     sectionId: "section-5",
   },
