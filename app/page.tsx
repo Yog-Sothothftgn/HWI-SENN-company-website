@@ -10,18 +10,21 @@ const products = [
     title: "Fish Oil",
     desc: "Custom EPA/DHA specs, deodorized, bulk packaging available.",
     img: "/oil1.jpg",
+    alt: "Bulk Omega-3 fish oil EPA DHA ethyl ester concentrate",
     sectionId: "section-3",
   },
   {
     title: "Omega-3 Powder",
     desc: "Plant-based DHA/EPA solutions for EU/NA supplement brands.",
     img: "/Powder.jpg",
+    alt: "Microencapsulated Omega-3 fish oil and algae oil powder",
     sectionId: "section-4",
   },
   {
     title: "Capsules",
     desc: "Customized processing for deep-sea derived ingredients and intermediates.",
     img: "/capsule.jpg",
+    alt: "Omega-3 EPA DHA softgel capsules",
     sectionId: "section-5",
   },
 ];
@@ -105,7 +108,7 @@ export default function Home() {
 
             {/* Desktop logo (original full-width) */}
             <div className="relative z-10 hidden lg:block w-full max-w-4xl px-6 mx-auto">
-              <Image src="/logo_transparent.png" alt="HWI SENN" width={1400} height={1400} className="mx-auto w-full h-auto" priority/>
+              <Image src="/logo_transparent.png" alt="HWI SENN Omega-3 supplier logo" width={1400} height={1400} className="mx-auto w-full h-auto" priority/>
             </div>
 
             {/* Desktop text (original -mt-24 overlap) */}
@@ -132,7 +135,7 @@ export default function Home() {
             {/* Mobile: small logo + text stacked */}
             <div className="relative z-10 lg:hidden flex flex-col items-center gap-5 px-6 text-center">
               <div className="w-52 sm:w-64">
-                <Image src="/logo_transparent.png" alt="HWI SENN" width={1400} height={1400} className="w-full h-auto" priority/>
+                <Image src="/logo_transparent.png" alt="HWI SENN Omega-3 supplier logo" width={1400} height={1400} className="w-full h-auto" priority/>
               </div>
               <h1 className="text-xl sm:text-2xl font-semibold leading-snug tracking-tight text-black dark:text-zinc-50 max-w-xs">
                 Omega-3 Fatty Acids: Essential Nutrients for Brain and Heart Health
@@ -185,7 +188,7 @@ export default function Home() {
                     <Tiltcard>
                       <div className="bg-white rounded-lg shadow-md transition-shadow group-hover:shadow-lg">
                         <div className="relative w-full h-44 sm:h-56 lg:h-96 overflow-hidden rounded-t-lg">
-                          <Image src={product.img} alt={product.title} fill className="object-cover"/>
+                          <Image src={product.img} alt={product.alt} fill className="object-cover"/>
                         </div>
                         <div className="p-3 lg:p-4">
                           <h3 className="text-lg lg:text-2xl font-semibold">{product.title}</h3>
@@ -308,7 +311,7 @@ export default function Home() {
               </div>
               {/* Right: image — hidden on small mobile, visible sm+ */}
               <div className="flex-1 w-full h-36 sm:h-52 lg:h-96 rounded-xl overflow-hidden">
-                <Image src="/Powder.jpg" alt="Omega-3 Powder" width={600} height={600} className="w-full h-full object-cover"/>
+                <Image src="/Powder.jpg" alt="Microencapsulated Omega-3 fish oil and algae oil powder" width={600} height={600} className="w-full h-full object-cover"/>
               </div>
             </div>
           </section>
@@ -382,7 +385,7 @@ export default function Home() {
               {/* Right: contact card */}
               <div className="flex-1 w-full flex flex-col items-center justify-center h-40 lg:h-96 rounded-2xl border-2 border-dashed border-zinc-300 bg-white/50 gap-3 lg:gap-5 overflow-hidden relative">
                 <div className="absolute inset-0 opacity-20">
-                  <Image src="/capsule.jpg" alt="Capsules" fill className="object-cover"/>
+                  <Image src="/capsule.jpg" alt="Omega-3 EPA DHA softgel capsules" fill className="object-cover"/>
                 </div>
                 <div className="relative z-10 flex flex-col items-center gap-3 lg:gap-5 px-4 text-center">
                   <p className="text-lg lg:text-2xl font-extrabold text-zinc-800 tracking-tight">Contact for More</p>

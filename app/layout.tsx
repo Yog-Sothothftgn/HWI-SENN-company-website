@@ -51,7 +51,21 @@ export const metadata: Metadata = {
     siteName: "HWI SENN",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/logo.png", width: 1024, height: 1024, alt: "HWI SENN logo" }],
   },
+  twitter: {
+    card: "summary",
+    title: "HWI SENN | Omega-3 Fatty Acids Supplier",
+    description:
+      "Bulk fish oil, Omega-3 powder and capsules for nutritional and pharmaceutical brands. LA warehouse, US domestic shipping.",
+    images: ["/logo.png"],
+  },
+  metadataBase: new URL("https://www.hwisenn.com"),
+  icons: {
+    icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/icon.png" }],
+  },
+  robots: { index: true, follow: true },
   alternates: {
     canonical: "https://www.hwisenn.com",
   },
