@@ -88,6 +88,7 @@ const jsonLd = {
         "postalCode": "92705",
         "addressCountry": "US"
       },
+      "telephone": "+852-9585-0397",
       "areaServed": "US",
       "sameAs": ["https://www.linkedin.com/in/shelley-jiang-1a2b2337/"]
     },

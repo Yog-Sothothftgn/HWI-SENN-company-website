@@ -119,6 +119,9 @@ export default function Home() {
               <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
                 Looking for more information or need to contact us?
               </p>
+              <a href="tel:+85295850397" className="-mt-3 text-lg font-semibold tracking-wide text-zinc-700 hover:text-zinc-900 transition-colors">
+                Tel: +852 9585 0397
+              </a>
               <div className="flex items-center gap-3">
                 <button onClick={() => setShowContact(true)} className="px-6 py-3 rounded-full bg-zinc-800 text-white text-sm font-semibold tracking-wide hover:bg-zinc-700 transition-colors shadow-sm">
                   Contact Us →
@@ -143,6 +146,9 @@ export default function Home() {
               <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-400 max-w-xs">
                 Looking for more information or need to contact us?
               </p>
+              <a href="tel:+85295850397" className="-mt-3 text-sm font-semibold tracking-wide text-zinc-700">
+                Tel: +852 9585 0397
+              </a>
               <div className="flex items-center gap-3">
                 <button onClick={() => setShowContact(true)} className="px-5 py-2.5 rounded-full bg-zinc-800 text-white text-sm font-semibold tracking-wide hover:bg-zinc-700 transition-colors shadow-sm">
                   Contact Us →
@@ -398,6 +404,9 @@ export default function Home() {
                   >
                     Get in Touch →
                   </button>
+                  <a href="tel:+85295850397" className="text-sm lg:text-base font-semibold tracking-wide text-zinc-700 hover:text-zinc-900 transition-colors">
+                    Tel: +852 9585 0397
+                  </a>
                 </div>
               </div>
             </div>
